@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Hammurabi</title>
+		<link rel="stylesheet" type="text/css" href="hammurabi.css">
+		<script type="text/javascript" src="hammurabi.js">
+		</script>
+	</head>
+
+	<body onload="gameStart();" style="background-color: #E3CDAB">
+		<div id="main">
+		
+			<div class="sides"> <!-- rules -->
+				<h2>Regler:</h2>
+				<ol>
+				  <li>Spelet varar i 10 turer/år</li>
+				  <li>Varje år måste välja hur du allokerar dina hektar mark,
+						hur mycket som ska användas för att mata ditt folk, 
+						hur mycket som ska användas för att så frön samt
+						hur mycket som ska köpas/säljas</li>
+				  <li>Varje person behöver 20 skäppor(Bushels) spannmål varje år</li>
+				  <li>Varje person kan så 10 hektar mark</li>
+				  <li>Priset per hektar varierar mellan 17-26 skäppor</li>
+				  <li>Svälter över 45% av befolkning förlorar du</li>
+				</ol> 
+				<h2 style="margin-top: 20px;">Spelet:</h2>
+				<p>Hamurabi är en av de första strategi dataspelen. 
+					Det utvecklades av Doug Dymnent 1968 och kallades då 
+					<i>The Sumer Game</i>. Flera versioner av spelet gjordes i olika språk
+					men blev som populärast efter boken <i>BASIC Computer Games</i>
+					släpptes 1973. I boken fanns koden för spelet omskrivet i BASIC
+					men kallades då <i>Hamurabi</i>. Detta blev det populärare namnet.</p>
+			</div>
+		
+			<div id="gameDiv">
+				<h1>O Great Hammurabi!</h1>
+				<h2 id="year">The report for year:</h2>
+				
+				<ul id="people">
+					<li id="starved">Starved:</li>
+					<li id="newcomers">Newcomers:</li>
+					<li id="population">Population:</li>
+				</ul>
+				
+				<ul id="economy">
+					<li id="acres">Acres:</li>
+					<li id="bushels">Bushels:</li>
+					<li id="harvest">Harvest:</li>
+					<li id="rats">Rats:</li>
+					<li id="price">Price:</li>
+				</ul>
+				
+				<form>
+					<fieldset class="fieldset">
+						<legend>Acres to sell / buy <span id="outputAcrestosellbuy"></span></legend>
+						<input type="button" value="-" id="minusbuttonAcrestosellbuy" onclick="onChangeAcres('minusbuttonAcrestosellbuy');">
+						<input type="range" id="sliderAcrestosellbuy" onchange="onChangeAcres('sliderAcrestosellbuy');">
+						<input type="button" value="+" id="plusbuttonAcrestosellbuy" onclick="onChangeAcres('plusbuttonAcrestosellbuy');">
+					</fieldset>
+					
+					<fieldset class="fieldset">
+						<legend>Feed people <span id="outputFeedpeople"></span></legend>
+						<input type="button" value="-" id="minusbuttonFeedpeople" onclick="onChangeFeeding('minusbuttonFeedpeople');">
+						<input type="range" id="sliderFeedpeople" onchange="onChangeFeeding('sliderFeedpeople');">
+						<input type="button" value="+" id="plusbuttonFeedpeople" onclick="onChangeFeeding('plusbuttonFeedpeople');">
+					</fieldset>
+					
+					<fieldset class="fieldset">
+						<legend>Plant with seed <span id="outputPlantwithseed"></span></legend>
+						<input type="button" value="-" id="minusbuttonPlantwithseed" onclick="onChangePlanting('minusbuttonPlantwithseed');">
+						<input type="range" id="sliderPlantwithseed" onchange="onChangePlanting('sliderPlantwithseed');">
+						<input type="button" value="+" id="plusbuttonPlantwithseed" onclick="onChangePlanting('plusbuttonPlantwithseed');">
+					</fieldset>
+					
+					<div id="btns">
+						<button type="button" onclick="gameStart();">Restart</button>
+						<button type="button" onclick="finishTurn();">So be it!</button>
+					</div>
+					
+				</form>
+			</div>
+			
+			<div class="sides"> <!-- history -->
+				<img src="http://s3.amazonaws.com/s3.timetoast.com/public/uploads/photos/9666265/picture_face.jpg?1488288475"
+					style="border-radius: 50%; width:30%; margin: 25px 35% 2px 35%;">
+					<h2>Hammurabi</h2>
+					<p>var kung över Babylonien 1792–1750 f Kr. 
+						Han hade en enorm påverkan på den tidiga utvecklingen av Babylonien.
+						Under sin livstid ansågs han som en gud pågrund av hans skicklighet
+						när det gällde erövring samt hans förmåga att sprida det Babyloniska riket.<p>
+					
+					<p>Idag är han däremot mer känd för lagarna som han upprättade.
+						Dessa är inte de tidigaste lagarna som har hittats men anses vara de mest inflytelserika.
+						Dessa lagar fokuserade på att straffa gärningsmanen.
+						Trotts att dessa straff anses som väldigt brutala i jämförelse med våra moderna straff,
+						så var de ändå revolutionernade på den tiden pga att lagarna gav tydliga utbestämda straff
+						beroende på gärningen. Detta betyde att offrets hämd var begränsat, vilket det tidigare inte hade varit.</p>
+			</div>
+		</div>
+	</body>
+
+</html>
